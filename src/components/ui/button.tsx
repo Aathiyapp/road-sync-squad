@@ -5,11 +5,14 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-adventure hover:shadow-glow",
+        adventure: "bg-gradient-adventure text-adventure-foreground hover:scale-105 transform transition-all duration-300 shadow-adventure hover:shadow-glow",
+        hero: "bg-gradient-hero text-primary-foreground hover:scale-105 transform transition-all duration-500 shadow-glow text-lg font-semibold",
+        sunset: "bg-gradient-sunset text-secondary-foreground hover:scale-105 transform transition-all duration-300 shadow-adventure",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
